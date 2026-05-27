@@ -1,0 +1,38 @@
+# Entornos y secretos
+.env
+.env.local
+.env.production
+.env.development
+
+# Dependencias
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compilados y builds
+dist/
+**/dist/
+build/
+.next/
+out/
+
+# IDEs y Editores
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Docker local y DB data
+mysql_data/
+**/mysql_data/
