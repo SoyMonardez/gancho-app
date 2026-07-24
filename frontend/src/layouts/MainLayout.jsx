@@ -10,7 +10,7 @@ const MainLayout = () => {
     if (location.pathname.includes('/confirmaciones')) return 'Confirmar Transferencias';
     if (location.pathname.includes('/cierre')) return 'Cierre de Caja';
     if (location.pathname.includes('/precios')) return 'Panel de Control';
-    return 'Génesis Meat';
+    return 'Gancho';
   };
 
   return (

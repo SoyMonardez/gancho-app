@@ -12,8 +12,11 @@ import { ShoppingCart, CheckCircle, Wallet, Settings, Truck } from 'lucide-react
 const RoleSelector = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-meat-dark text-white">
-      <h1 className="text-3xl font-bold mb-8 text-center text-meat-light">Génesis Meat <span className="text-meat-green">MVP</span></h1>
-      <p className="mb-6 text-gray-400 text-center">Selecciona tu rol para acceder al sistema:</p>
+      <h1 className="text-5xl md:text-6xl font-bold mb-2 text-center text-meat-light tracking-tight">
+        <span className="text-meat-green">Gancho</span>
+      </h1>
+      <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-10">Sistema de Carnicería Inteligente</p>
+      <p className="mb-6 text-gray-400 text-center">Seleccioná tu rol para acceder al sistema:</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
         <Link to="/vendedor" className="flex items-center gap-3 bg-meat-gray p-6 rounded-xl hover:bg-gray-700 transition border-2 border-transparent hover:border-meat-green">

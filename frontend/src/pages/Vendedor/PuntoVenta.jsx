@@ -87,10 +87,10 @@ const PuntoVenta = () => {
   };
 
   return (
-    <div className="flex flex-col h-full relative overflow-hidden bg-meat-dark">
+    <div className="flex flex-col md:flex-row h-full relative overflow-hidden bg-meat-dark">
       <Modal {...modal} onClose={closeModal} />
       {/* Panel Izquierdo/Principal: Productos y Teclado */}
-      <div className="flex-1 p-4 flex flex-col gap-4 overflow-y-auto pb-24 md:pb-4 md:w-3/5 lg:w-2/3">
+      <div className="flex-1 min-w-0 p-4 flex flex-col gap-4 overflow-y-auto pb-24 md:pb-4 md:w-3/5 lg:w-2/3">
         {error && <div className="bg-meat-red text-white p-3 rounded-lg shadow-md">{error}</div>}
         
         {/* Filtro de Categorías */}
@@ -179,14 +179,15 @@ const PuntoVenta = () => {
         />
       )}
 
-      {/* Panel Derecho / Bottom Sheet: Carrito */}
+      {/* Panel Derecho (Carrito) / Bottom Sheet en mobile
+          DESKTOP: panel lateral fijo en la columna derecha (md:relative, w-2/5).
+          MOBILE: bottom sheet que se desliza desde abajo (fixed, full-width). */}
       <div className={`
-        fixed md:static inset-x-0 bottom-0 z-50 
-        transform transition-transform duration-300 ease-in-out
+        bg-meat-gray border-gray-700 flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.5)]
+        md:relative md:shadow-none md:translate-y-0 md:w-2/5 lg:w-1/3 md:h-full md:rounded-none md:border-l md:border-t-0
+        fixed inset-x-0 bottom-0 z-50 border-t rounded-t-3xl
+        h-[85vh] transform transition-transform duration-300 ease-in-out
         ${cartOpen ? 'translate-y-0' : 'translate-y-full md:translate-y-0'}
-        md:w-2/5 lg:w-1/3 bg-meat-gray md:border-l border-t md:border-t-0 border-gray-700 
-        flex flex-col h-[85vh] md:h-full rounded-t-3xl md:rounded-none shadow-[0_-10px_40px_rgba(0,0,0,0.5)] md:shadow-none
-        absolute md:relative right-0
       `}>
         {/* Handle for mobile con Gestos Táctiles */}
         <div 
